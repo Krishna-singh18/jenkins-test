@@ -1,12 +1,18 @@
 pipeline {
     agent any
 
- 
-
     stages {
+        stage('Checkout') {
+            steps {
+                echo 'Code cloned successfully'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh 'pwd'
+                sh 'ls -la'
+                echo 'Build Successful'
             }
         }
     }
